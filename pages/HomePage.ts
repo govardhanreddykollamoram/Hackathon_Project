@@ -15,7 +15,7 @@ export class HomePage {
   }
 
   async searchLocation(location: string): Promise<void> {
-    await this.page.locator(HomeLocators.searchLocation).fill('');
+    await this.page.locator(HomeLocators.searchLocation).clear();
     await this.page.locator(HomeLocators.searchLocation).pressSequentially(location, { delay: 150 });
     await this.page.locator(HomeLocators.suggestionMain).first().click();
     await takeActionScreenshot(this.page, `location-selected-${location}`);
@@ -28,16 +28,9 @@ export class HomePage {
     await takeActionScreenshot(this.page, `service-selected-${service}`);
   }
 
-  async open() {
-    await this.page.goto("/");
-  }
-
   async openCorporatePage() {
-    // Click "For Corporates" from navbar dropdown
     await this.page.getByText('For Corporates').first().click();
-    
-    // Click "Health & Wellness Plans"
-    await this.page.getByRole('link', { name: 'Health & Wellness Plans' }).click();
+    await this.page.locator(HomeLocators.corporateSelect).click();
     await takeActionScreenshot(this.page, 'health-wellness-plans-clicked');
   }
 }

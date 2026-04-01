@@ -4,7 +4,7 @@ import { HospitalPage } from '../pages/HospitalPage';
 import { takeActionScreenshot } from '../utils/HelperFunctions';  
 
 
-test('@sanity Search hospitals and validate details', async ({ page, context }) => {
+test('@validate Search hospitals and validate details', async ({ page, context }) => {
   // Basic hospital search functionality
   const homePage = new HomePage(page);
   const hospitalPage = new HospitalPage(page);

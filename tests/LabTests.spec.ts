@@ -2,12 +2,11 @@ import { test, expect } from '@playwright/test';
 import { LabTestsPage } from '../pages/LabTestsPage';
 import { takeActionScreenshot } from '../utils/HelperFunctions';
 
-test("@regression lab tests",async({page})=>{
+test("@add-to-cart lab tests",async({page})=>{
   
     const labTests=new LabTestsPage(page);
     await labTests.navigate();
     await takeActionScreenshot(page, 'navigate');
-   // await page.pause();
     await labTests.lab();
     
     

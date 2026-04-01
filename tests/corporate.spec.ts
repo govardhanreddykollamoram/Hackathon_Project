@@ -4,7 +4,7 @@ import { HomePage } from "../pages/HomePage";
 import { CorporatePage } from "../pages/CorporatePage";
 import { takeActionScreenshot } from "../utils/HelperFunctions";
 
-test.describe("@corporate @buttonstate @negative", () => {
+test.describe("@corporate", () => {
   test("Corporate Wellness - invalid data keeps the button disabled", async ({ page }) => {
     const home = new HomePage(page);
     //await page.pause();
@@ -25,7 +25,7 @@ test.describe("@corporate @buttonstate @negative", () => {
 
     // Log for clarity (as requested)
     if (!isEnabled) {
-      console.log("✅ Since the data is invalid, the 'Schedule a Demo' button is disabled.");
+      console.log(" Since the data is invalid, the 'Schedule a Demo' button is disabled.");
     }
 
     // Evidence screenshot

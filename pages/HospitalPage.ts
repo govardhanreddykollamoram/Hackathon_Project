@@ -10,6 +10,7 @@ export class HospitalPage {
 
   async getHospitalNames(): Promise<Locator[]> {
     await this.page.waitForSelector(HospitalLocators.hospitalName);
+    //await this.page.mouse.wheel(0, 10000);
     return await this.page.locator(HospitalLocators.hospitalName).all();
   }
 
